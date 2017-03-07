@@ -11,13 +11,18 @@ import java.io.IOException;
 /**
  * Created by arimi on 07-Mar-17.
  */
+
+/**
+ * Game class is the game window, has all its components and methods
+ */
 public class Game extends JFrame{
-
-
     private BufferedImage myPicture;
     private JLabel image;
     private JButton backButton;
 
+    /**
+     * the constructor creates the panel and orders it
+     */
     public Game() {
         try {
             myPicture = ImageIO.read(new File("./Image/gameImage.png"));
@@ -38,6 +43,10 @@ public class Game extends JFrame{
         pack();
     }
 
+    /**
+     * the methods add a listener to the back button and the show/hide methods
+     * @param listener
+     */
     public void addBackButtonListener(ActionListener listener){
         backButton.addActionListener(listener);
     }

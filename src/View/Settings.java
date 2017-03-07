@@ -7,6 +7,10 @@ import java.awt.event.ActionListener;
 /**
  * Created by arimi on 07-Mar-17.
  */
+
+/**
+ * Settings class is the Settings window, has all its components and methods
+ */
 public class Settings extends JFrame{
     private JLabel settings = new JLabel("View.Settings");
     private JCheckBox shadows = new JCheckBox("Shadows",true);
@@ -24,6 +28,10 @@ public class Settings extends JFrame{
 
     public Settings() throws HeadlessException {
 
+        /**
+         * the constructor initiates it's components, creates a panel for every menu that can be changed,
+         * and organizes them in their correct order
+         */
         settings.setAlignmentX(Component.CENTER_ALIGNMENT);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -66,6 +74,9 @@ public class Settings extends JFrame{
         setVisible(false);
     }
 
+    /**
+     * the methods adds listeners to the buttons and the show/hide methods
+     */
     //show and hide
     public void showSelf(){
         setVisible(true);

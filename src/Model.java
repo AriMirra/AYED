@@ -1,12 +1,19 @@
 /**
  * Created by arimi on 04-Mar-17.
  */
+
+/**
+ * Mode class controls the logic of the sistem, and prints the changes in the settings
+ */
 public class Model {
     private boolean shadows = true;
     private boolean antiAliasing = false;
     private boolean sound = true;
     private boolean music = true;
 
+    /**
+     * it's methods print the change in the settings when they happen
+     */
     public void shadowsChanged(){
         if (shadows) System.out.println("shadows turned off");
         else System.out.println("shadows turned on");

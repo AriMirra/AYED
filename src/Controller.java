@@ -8,6 +8,11 @@ import java.awt.event.ActionListener;
 /**
  * Created by arimi on 02-Mar-17.
  */
+
+/**
+ * the controller class manages the functionality of the MainMenu, Settings, and Game windows
+ * it also adds listeners to the buttons and their behaviour when clicked
+ */
 public class Controller {
     private Model model;
     private MainMenu mainMenu;
@@ -32,7 +37,9 @@ public class Controller {
         this.settings.addShadowsListener(new shadowsListener());
 
     }
-
+    /**
+     * creates the classes to add listeners to the buttons on the windows, and their behaviour when clicked
+     */
     //implement listeners
     private class startGameListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
@@ -40,27 +47,23 @@ public class Controller {
             game.showSelf();
         }
     }
-
     private class settingsListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             mainMenu.hideSelf();
             settings.showSelf();
         }
     }
-
     private class exitListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             System.exit(0);
         }
     }
-
     private class backListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             settings.hideSelf();
             mainMenu.showSelf();
         }
     }
-
     private class shadowsListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             model.shadowsChanged();
@@ -87,5 +90,4 @@ public class Controller {
             game.hideSelf();
         }
     }
-
 }

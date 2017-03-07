@@ -7,6 +7,10 @@ import java.awt.event.ActionListener;
 /**
  * Created by arimi on 04-Mar-17.
  */
+
+/**
+ * MainMenu class is the MainMenu window, has all its components and methods
+ */
 public class MainMenu extends JFrame {
 
     //labels
@@ -19,6 +23,10 @@ public class MainMenu extends JFrame {
     private JButton settings = new JButton("View.Settings");
     private JButton exit = new JButton("Exit");
 
+    /**
+     * the constructor initiates it's components, and organizes them in their correct order
+     * @throws HeadlessException
+     */
     //constructor
     public MainMenu() throws HeadlessException {
         super("Main Menu");
@@ -61,6 +69,10 @@ public class MainMenu extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * the methods adds listeners to the buttons and the show/hide methods
+     * @param listener
+     */
     //add listeners to buttons
     public void addStartGameListener(ActionListener listener){
         startGame.addActionListener(listener);
