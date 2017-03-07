@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by arimi on 04-Mar-17.
  */
-public class View extends JFrame {
+public class MainMenu extends JFrame {
 
     //labels
     private JLabel titulo = new JLabel("Trabajo Práctico Swing");
@@ -18,7 +18,7 @@ public class View extends JFrame {
     private JButton exit = new JButton("Exit");
 
     //constructor
-    public View() throws HeadlessException {
+    public MainMenu() throws HeadlessException {
         super("Main Menu");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -52,63 +52,29 @@ public class View extends JFrame {
         //add panel to frame and pack it
         add(panel);
         pack();
+        setResizable(false);
+        setVisible(true);
     }
-
 
     //add listeners to buttons
     void addStartGameListener(ActionListener listener){
-
         startGame.addActionListener(listener);
-
     }
 
     void addSettingsListener(ActionListener listener){
-
         settings.addActionListener(listener);
-
     }
 
     void addExitListener(ActionListener listener){
-
         exit.addActionListener(listener);
-
     }
 
-
-    //create another window for Settings
-    public class SettingsWindow extends JFrame{
-
-        private JLabel settings = new JLabel("Settings");
-        private JCheckBox soundBox = new JCheckBox("On",true);
-        private JCheckBox soundBox2 = new JCheckBox("Off",false);
-        private JCheckBox musicBox = new JCheckBox("On ",true);
-        private JCheckBox musicBox2 = new JCheckBox("Off ",false);
-        private JLabel sound = new JLabel("Sound: ");
-        private JLabel music = new JLabel("Music: ");
-
-        public SettingsWindow() throws HeadlessException {
-
-            settings.setAlignmentX(Component.CENTER_ALIGNMENT);
-            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-            //create and customize panel to be shown
-            JPanel panel = new JPanel();
-            panel.setLayout(new BorderLayout(15,15));
-            panel.add(settings, BorderLayout.PAGE_START);
-            panel.add(sound,BorderLayout.LINE_START);
-            panel.add(music,BorderLayout.LINE_START);
-            panel.add(soundBox,BorderLayout.CENTER);
-            panel.add(soundBox2,BorderLayout.CENTER);
-            panel.add(musicBox,BorderLayout.CENTER);
-            panel.add(musicBox2,BorderLayout.CENTER);
-
-            this.pack();
-            panel.setVisible(true);
-        }
-
-
+    //show and hide window
+    public void showSelf(){
+        setVisible(true);
     }
-
-
+    public void hideSelf(){
+        setVisible(false);
+    }
 
 }
