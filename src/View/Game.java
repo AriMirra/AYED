@@ -1,5 +1,8 @@
+package View;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -23,7 +26,9 @@ public class Game extends JFrame{
         }
         image = new JLabel(new ImageIcon(myPicture));
         backButton = new JButton("Back");
+        backButton.setAlignmentX(LEFT_ALIGNMENT);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
         setResizable(false);
         JPanel gamePanel = new JPanel();
         gamePanel.setLayout(new BoxLayout(gamePanel,BoxLayout.Y_AXIS));

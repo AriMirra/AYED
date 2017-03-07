@@ -1,3 +1,5 @@
+package View;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -13,17 +15,20 @@ public class MainMenu extends JFrame {
     private JLabel subtitulo2 = new JLabel("Franco Velardez");
 
     //buttons
-    private JButton startGame = new JButton("Start Game");
-    private JButton settings = new JButton("Settings");
+    private JButton startGame = new JButton("Start View.Game");
+    private JButton settings = new JButton("View.Settings");
     private JButton exit = new JButton("Exit");
 
     //constructor
     public MainMenu() throws HeadlessException {
         super("Main Menu");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
 
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel,BoxLayout.PAGE_AXIS));
+        titulo.setFont(new Font("font",Font.BOLD,17));
+
 
         //center all components
         startGame.setAlignmentX(CENTER_ALIGNMENT);
@@ -57,15 +62,15 @@ public class MainMenu extends JFrame {
     }
 
     //add listeners to buttons
-    void addStartGameListener(ActionListener listener){
+    public void addStartGameListener(ActionListener listener){
         startGame.addActionListener(listener);
     }
 
-    void addSettingsListener(ActionListener listener){
+    public void addSettingsListener(ActionListener listener){
         settings.addActionListener(listener);
     }
 
-    void addExitListener(ActionListener listener){
+    public void addExitListener(ActionListener listener){
         exit.addActionListener(listener);
     }
 

@@ -1,7 +1,9 @@
+import View.Game;
+import View.MainMenu;
+import View.Settings;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.net.URISyntaxException;
 
 /**
  * Created by arimi on 02-Mar-17.
@@ -18,12 +20,16 @@ public class Controller {
         settings = new Settings();
         game = new Game();
 
-        //add listeners to windows
+        //add listeners to components
         this.mainMenu.addStartGameListener(new startGameListener());
         this.mainMenu.addSettingsListener(new settingsListener());
         this.mainMenu.addExitListener(new exitListener());
         this.settings.addBackListener(new backListener());
         this.game.addBackButtonListener(new BackButtonListener());
+        this.settings.addMusicListener(new musicListener());
+        this.settings.addSoundListener(new soundListener());
+        this.settings.addAAListener(new antiAliasingListener());
+        this.settings.addShadowsListener(new shadowsListener());
 
     }
 
@@ -57,12 +63,22 @@ public class Controller {
 
     private class shadowsListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+            model.shadowsChanged();
         }
     }
     private class antiAliasingListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+            model.antiAliasingChanged();
+        }
+    }
+    private class soundListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            model.soundChanged();
+        }
+    }
+    private class musicListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            model.musicChanged();
         }
     }
     private class BackButtonListener implements ActionListener {
