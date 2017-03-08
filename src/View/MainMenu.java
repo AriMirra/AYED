@@ -5,10 +5,6 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 /**
- * Created by arimi on 04-Mar-17.
- */
-
-/**
  * MainMenu class is the MainMenu window, has all its components and methods
  */
 public class MainMenu extends JFrame {
@@ -69,27 +65,42 @@ public class MainMenu extends JFrame {
         setVisible(true);
     }
 
+    //add listeners to buttons
     /**
-     * the methods adds listeners to the buttons and the show/hide methods
+     * adds a listener to the startGame button
      * @param listener
      */
-    //add listeners to buttons
     public void addStartGameListener(ActionListener listener){
         startGame.addActionListener(listener);
     }
 
+    /**
+     * adds a listener to the settings button
+     * @param listener
+     */
     public void addSettingsListener(ActionListener listener){
         settings.addActionListener(listener);
     }
 
+    /**
+     * adds a listener to the exit button
+     * @param listener
+     */
     public void addExitListener(ActionListener listener){
         exit.addActionListener(listener);
     }
 
     //show and hide window
+    /**
+     * turns the window visible
+     */
     public void showSelf(){
         setVisible(true);
     }
+
+    /**
+     * turns the window invisible
+     */
     public void hideSelf(){
         setVisible(false);
     }

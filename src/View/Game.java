@@ -7,11 +7,6 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-
-/**
- * Created by arimi on 07-Mar-17.
- */
-
 /**
  * Game class is the game window, has all its components and methods
  */
@@ -44,19 +39,25 @@ public class Game extends JFrame{
     }
 
     /**
-     * the methods add a listener to the back button and the show/hide methods
+     * adds a listener to the back button
      * @param listener
      */
     public void addBackButtonListener(ActionListener listener){
         backButton.addActionListener(listener);
     }
+
     //show and hide
+    /**
+     * turns the window visible
+     */
     public void showSelf(){
         setVisible(true);
     }
+
+    /**
+     * turns the window invisible
+     */
     public void hideSelf(){
         setVisible(false);
     }
-
-
 }

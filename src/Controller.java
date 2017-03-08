@@ -1,13 +1,8 @@
 import View.Game;
 import View.MainMenu;
 import View.Settings;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-/**
- * Created by arimi on 02-Mar-17.
- */
 
 /**
  * the controller class manages the functionality of the MainMenu, Settings, and Game windows
@@ -37,53 +32,86 @@ public class Controller {
         this.settings.addShadowsListener(new shadowsListener());
 
     }
-    /**
-     * creates the classes to add listeners to the buttons on the windows, and their behaviour when clicked
-     */
+
     //implement listeners
+    /**
+     * class to add listeners to the startGame button, and implements it's behaviour when clicked
+     */
     private class startGameListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             mainMenu.hideSelf();
             game.showSelf();
         }
     }
+
+    /**
+     * class to add listeners to the settings button, and implements it's behaviour when clicked
+     */
     private class settingsListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             mainMenu.hideSelf();
             settings.showSelf();
         }
     }
+
+    /**
+     * class to add listeners to the exit button, and implements it's behaviour when clicked
+     */
     private class exitListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             System.exit(0);
         }
     }
+
+    /**
+     * class to add listeners to the back button, and implements it's behaviour when clicked
+     */
     private class backListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             settings.hideSelf();
             mainMenu.showSelf();
         }
     }
+
+    /**
+     * class to add listeners to the shadows checkbox, and implements it's behaviour when clicked
+     */
     private class shadowsListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             model.shadowsChanged();
         }
     }
+
+    /**
+     * class to add listeners to the antiAliasing checkbox, and implements it's behaviour when clicked
+     */
     private class antiAliasingListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             model.antiAliasingChanged();
         }
     }
+
+    /**
+     * class to add listeners to the sound buttons, and implements it's behaviour when clicked
+     */
     private class soundListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             model.soundChanged();
         }
     }
+
+    /**
+     * class to add listeners to the music buttons, and implements it's behaviour when clicked
+     */
     private class musicListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             model.musicChanged();
         }
     }
+
+    /**
+     * class to add listeners to the back button on the game window, and implements it's behaviour when clicked
+     */
     private class BackButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             mainMenu.showSelf();

@@ -39,7 +39,7 @@ public class Settings extends JFrame{
         graphics.setAlignmentX(RIGHT_ALIGNMENT);
         //sound panel
         JPanel soundPanel = new JPanel();
-        soundPanel.setLayout(new BoxLayout(soundPanel,BoxLayout.X_AXIS));
+        soundPanel.setLayout(new BoxLayout(soundPanel, BoxLayout.X_AXIS));
         soundPanel.add(sound);
         soundPanel.add(soundOn);
         soundPanel.add(soundOff);
@@ -47,7 +47,7 @@ public class Settings extends JFrame{
         soundButtons.add(soundOff);
         //Music panel
         JPanel musicPanel = new JPanel();
-        musicPanel.setLayout(new BoxLayout(musicPanel,BoxLayout.X_AXIS));
+        musicPanel.setLayout(new BoxLayout(musicPanel, BoxLayout.X_AXIS));
         musicPanel.add(music);
         musicPanel.add(musicOn);
         musicPanel.add(musicOff);
@@ -55,12 +55,12 @@ public class Settings extends JFrame{
         musicButtons.add(musicOff);
         //checkboxes panel
         JPanel checkBoxPanel = new JPanel();
-        checkBoxPanel.setLayout(new BoxLayout(checkBoxPanel,BoxLayout.X_AXIS));
+        checkBoxPanel.setLayout(new BoxLayout(checkBoxPanel, BoxLayout.X_AXIS));
         checkBoxPanel.add(shadows);
         checkBoxPanel.add(antiAliasing);
         //create and customize panel to be shown
         JPanel panel = new JPanel();
-        panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.add(settings);
         panel.add(soundPanel);
         panel.add(musicPanel);
@@ -75,31 +75,58 @@ public class Settings extends JFrame{
     }
 
     /**
-     * the methods adds listeners to the buttons and the show/hide methods
+     * turns the window visible
      */
-    //show and hide
     public void showSelf(){
         setVisible(true);
     }
+
+    /**
+     * turns the window invisible
+     */
     public void hideSelf(){
         setVisible(false);
     }
 
     //add listener to buttons
+    /**
+     * add a listener to the back button
+     * @param listener
+     */
     public void addBackListener(ActionListener listener){
         back.addActionListener(listener);
     }
+
+    /**
+     * add a listener to the sound buttons
+     * @param listener
+     */
     public void addSoundListener(ActionListener listener){
         soundOn.addActionListener(listener);
         soundOff.addActionListener(listener);
     }
+
+    /**
+     * add a listener to the music buttons
+     * @param listener
+     */
     public void addMusicListener(ActionListener listener){
         musicOn.addActionListener(listener);
         musicOff.addActionListener(listener);
     }
+
+    /**
+     * add a listener to the shadows checkbox
+     * @param listener
+     */
     public void addShadowsListener(ActionListener listener){
         shadows.addActionListener(listener);
     }
+
+    /**
+     * add a listener to the antiAliasing checkbox
+     * @param listener
+     */
     public void addAAListener(ActionListener listener){
         antiAliasing.addActionListener(listener);
     }

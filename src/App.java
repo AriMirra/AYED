@@ -1,6 +1,3 @@
-/**
- * Created by arimi on 04-Mar-17.
- */
 
 /**
  * the app class has the main to run the controller and initiate the program
