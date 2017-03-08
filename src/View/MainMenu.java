@@ -15,8 +15,8 @@ public class MainMenu extends JFrame {
     private JLabel subtitulo2 = new JLabel("Franco Velardez");
 
     //buttons
-    private JButton startGame = new JButton("Start View.Game");
-    private JButton settings = new JButton("View.Settings");
+    private JButton startGame = new JButton("Start Game");
+    private JButton settings = new JButton("Settings");
     private JButton exit = new JButton("Exit");
 
     /**

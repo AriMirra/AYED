@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
  * Settings class is the Settings window, has all its components and methods
  */
 public class Settings extends JFrame{
-    private JLabel settings = new JLabel("View.Settings");
+    private JLabel settings = new JLabel("Settings");
     private JCheckBox shadows = new JCheckBox("Shadows",true);
     private JCheckBox antiAliasing = new JCheckBox("AntiAliasing",false);
     private JLabel sound = new JLabel("Sound: ");
@@ -129,5 +129,19 @@ public class Settings extends JFrame{
      */
     public void addAAListener(ActionListener listener){
         antiAliasing.addActionListener(listener);
+    }
+
+    /**
+     * returns if the sound is on
+     */
+    public Boolean isTheSoundOn(){
+        return soundButtons.getSelection().equals(soundOn.getModel());
+    }
+
+    /**
+     * returns if the music is on
+     */
+    public Boolean isTheMusicOn(){
+        return musicButtons.getSelection().equals(musicOn.getModel());
     }
 }

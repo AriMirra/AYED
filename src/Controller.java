@@ -96,7 +96,7 @@ public class Controller {
      */
     private class soundListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            model.soundChanged();
+            model.soundChanged(settings.isTheSoundOn());
         }
     }
 
@@ -105,7 +105,7 @@ public class Controller {
      */
     private class musicListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            model.musicChanged();
+            model.musicChanged(settings.isTheMusicOn());
         }
     }
 

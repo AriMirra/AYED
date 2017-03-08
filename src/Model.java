@@ -8,15 +8,13 @@
 public class Model {
     private boolean shadows = true;
     private boolean antiAliasing = false;
-    private boolean sound = true;
-    private boolean music = true;
 
     /**
      * prints the change in the shadow settings when they happen
      */
     public void shadowsChanged(){
-        if (shadows) System.out.println("shadows turned off");
-        else System.out.println("shadows turned on");
+        if (shadows) System.out.println("Shadows: Off");
+        else System.out.println("Shadows: On");
         shadows = !shadows;
     }
 
@@ -24,26 +22,24 @@ public class Model {
      * prints the change in the antiAliasing settings when they happen
      */
     public void antiAliasingChanged(){
-        if (antiAliasing) System.out.println("antiAliasing turned off");
-        else System.out.println("antiAliasing turned on");
+        if (antiAliasing) System.out.println("Anti-aliasing: Off");
+        else System.out.println("Anti-aliasing: On");
         antiAliasing = !antiAliasing;
     }
 
     /**
      * prints the change in the sound settings when they happen
      */
-    public void soundChanged(){
-        if (sound) System.out.println("sound turned off");
-        else System.out.println("sound turned on");
-        sound = !sound;
+    public void soundChanged(boolean b){
+        if (b) System.out.println("Sound: On");
+        else System.out.println("Sound: Off");
     }
 
     /**
      * prints the change in the music settings when they happen
      */
-    public void musicChanged(){
-        if (music) System.out.println("music turned off");
-        else System.out.println("music turned on");
-        music = !music;
+    public void musicChanged(boolean b){
+        if (b) System.out.println("Music: On");
+        else System.out.println("Music: Off");
     }
 }
